@@ -1,0 +1,1 @@
+document.getElementById("taskList").innerHTML=void[{description:"Create and index.js file",completed:!1,index:1},{description:"Create and style.css file",completed:!1,index:2},{description:"Bundle into dist/ folder",completed:!1,index:3}].forEach((e=>`\n    <li>${e.description}</li>\n    `));
