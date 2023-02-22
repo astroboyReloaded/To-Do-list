@@ -20,7 +20,7 @@ const tasks = [
 
 const list = document.getElementById('taskList');
 
-const iterateTasks = () => tasks.map(task => (`
+const iterateTasks = () => tasks.map((task) => (`
 <li class="list-item">
   <label class="task-label"><input class="check" type="checkbox">${task.description}</label>
 </li>
