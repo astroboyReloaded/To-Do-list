@@ -1,11 +1,11 @@
+# Set Up Project with Webpack, by Alex Muñoz.
+
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="Astroboy-removebg.png" alt="logo" width="120"  height="auto" />
+  <img src="./images/Astroboy-removebg.png" alt="logo" width="120"  height="auto" />
   <br/>
-
-  <h3><b>Hello Microverse</b></h3>
-
+  <h3><b>To Do List | AstroboyReloaded</b></h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -16,13 +16,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
+- [👥 Author](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -31,29 +25,30 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Hello Microverse <a name="about-project"></a>
+# 📖 A To Do List CRUD SPA <a name="about-project"></a>
 
-> **Hello Microverse** is a starter exercise to create new projects based on specific settings and requirements to ensure proper structure and best practices. By cloning this repo and running `npm install` we will have a basic boilerplate with properly configured linters and correct initial file structrure.
+ Add, remove, edit, and re-order your To Do List items. This app uses `localStorage` to save your list and it will work offline.
+
+> <br> For future implementations, please go to the [Future Features](#future-features) section. [Click here to see the Live Demo](https://astroboyreloaded.github.io/).
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> This boilerplate focuses only on `linters` and `.gitignore`. No JS or Server are included in this repo.
-
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.w3.org/html/">HTML</a></li>
-    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">SCSS</a></li>
+    <li><a href="https://https://html5.org//">HTML 5</a></li>
+    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS 3</a></li>
     <li><a href="https://www.javascript.com/">JavaScript</a></li>
+    <li><a href="https://www.npm.com/">npm</a></li>
+    <li><a href="https://webpack.js.org/">webpack</a></li>
   </ul>
 </details>
-
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://www.netlify.com/">Netlify</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
   </ul>
 </details>
 
@@ -61,120 +56,101 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Linters**: [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Webhint](https://webhint.io/), and [Stylelint](https://stylelint.io/.)
-- **A `.github/workflows/linters.yml`** file to run linters on GitHub Pull Request.
-- **A** `.gitignore` file, including `node_modules/`.
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://hello-microverse.netlify.app/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-> If you are a new developer and would like to have a basic project boilerplate to start practicing your code or creating your first app-features, cloning this project will give you what you need!
-> To get a local copy up and running, follow these steps:
+- **basic webpack configuration**
+- **HTML** template.
+- Bsic **CSS**.
+- Render with **JavaScript**.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-- Have [npm](https://www.npmjs.com/package/npm) installed in your project:
-  ```sh
-  curl -qL https://www.npmjs.com/install.sh | sh
-  ```
+- [HTML](https://www.w3.org/html/) + [CSS](https://www.w3.org/Style/CSS/Overview.en.html) + [JavaScript](https://www.javascript.com/)
 
 ### Setup
 
-Clone this repository to your desired folder:
+- If you wish to work from this project by editing it's code:
 
 ```sh
-git clone https://github.com/astroboyReloaded/Hello-Microverse.git
+git clone https://github.com/astroboyReloaded/astroboyReloaded.github.io.git
 ```
 
-or
+### Install
 
-`git clone git@github.com:astroboyReloaded/Hello-Microverse.git` <-- _Only if you have [SSH keys configured](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on your GitHub account_.
+You may add linters to ensure adhering to best practices.
 
-### Install:
+1.- Create a package.json:
 
-run the 
 ```sh
-npm install` command in your console.
+npm init -y
+```
+
+or:
+
+```sh
+npm init
+```
+
+to fill up fields manually.
+
+2.- Install all dependencies:
+
+```sh
+npm install
 ```
 
 ### Usage
 
-To run the linters before committing any changes to your code, execute the following commands:
+- May use as a base or reference to develop your own portfolio.
+- Run
 
 ```sh
-lighthouse <url>
+npm run watch
 ```
-```sh
-npx hint .
-```
-```sh
-`npx stylelint "**/*.{css,scss}"`
-``` 
-_NOTE: this repo is set up to use with CSS. If you would like to use [SCSS](https://sass-lang.com/)., you must replace `"**/*.{css,scss}"` with `"**/*.scss"` in **line 48** of the `linters.yml` file, and run the linter with:_
-```sh
-npx stylelint "**/*.scss"
-```
- _instead_.
- 
- ```sh
- npx eslint .
- ```
+To auto-bundle every time you save changes.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## Author <a name="authors"></a>
 
-> 👤 **AstroboyReloaded**
+👤 **astroboyReloaded**
 
-- GitHub: [@astroboyReloaded](https://github.com/astroboyReloaded)
+- GitHub: [astroboyReloaded](https://github.com/astroboyReloaded)
 - Twitter: [@astroboyReload](https://twitter.com/astroboyReload)
-- LinkedIn: [Alex Muñoz](https://www.linkedin.com/in/astroboyreloaded/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/astroboyreloaded/)
 
 <!-- FUTURE FEATURES -->
 
-## 🔭 Future Features <a name="future-features"></a>
+## ⭐️ Future Features <a name="future-features"></a>
 
-- [ESLint](https://eslint.org/).
+- Save to `localStorage`.
+- **CRUD**
+- Dragg and drop.
 
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome!
-
+Please let me know if you find any issues in this repo's code!
 Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> If you like this project please give me a star on GitHub.
+If you like my work on this project, please give me a star on this repo. I would also love to read your comment letting me know what you think!
 
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> I would like to thank [Microverse](https://www.microverse.org/) for teaching me these tools.
+> Thanks to [Microverse](https://www.microverse.org/) for giving me a path to follow in this learning journey!
+> Thanks to my mates, who walk by and share they experiences and knowledge with me during this journey: you make this experience even more valuable!
+> Thanks to [GitHub](https://github.com/) for being so awesome!
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+[MIT](https://mit-license.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

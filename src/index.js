@@ -1,29 +1,17 @@
 import './style.css';
+import { tasks, renderTasks } from './render';
+import {addTask, pushTask } from './addNRemove';
 
-const tasks = [
-  {
-    description: 'Create an index.js file',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Create a style.css file',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Bundle into dist/ folder',
-    completed: false,
-    index: 3,
-  },
-];
 
-const list = document.querySelector('#taskList');
 
-const iterateTasks = () => tasks.map((task) => (`
-<li class="list-item">
-  <label class="task-label"><input class="check" type="checkbox">${task.description}</label>
-</li>
-`)).join('');
+addTask.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    pushTask();
+    renderTasks();
+  }
+});
 
-list.innerHTML = iterateTasks();
+
+
+window.onload = renderTasks();
+

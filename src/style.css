@@ -33,7 +33,7 @@ main {
 #listContainer {
   width: 45vw;
   background-color: white;
-  box-shadow: 3px 6px 6px var(--gray), -2px 3px 4px var(--gray);
+  box-shadow: 3px 6px 6px var(--gray);
 }
 
 .list-header {
@@ -52,7 +52,6 @@ main {
     97% 50%
     no-repeat;
   background-size: 18px;
-  border: 1px solid var(--light);
 }
 
 .input-label {
@@ -63,7 +62,7 @@ main {
   border-bottom: 1px solid var(--gray);
 }
 
-.task-input {
+#task-input {
   border: none;
   width: calc(100% - 6px);
   padding: 9px;
@@ -74,11 +73,11 @@ main {
   background-size: 12px;
 }
 
-.task-input::placeholder {
+#task-input::placeholder {
   font-style: italic;
 }
 
-.task-input:focus {
+#task-input:focus {
   outline: none;
 }
 
@@ -87,17 +86,22 @@ main {
   flex-direction: column;
 }
 
-.list-item {
+.task-item {
   padding-block: 3px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--gray);
 }
 
+#check {
+  margin-inline: 12px;
+  border-radius: 0;
+}
+
 .task-label {
+  display: flex;
   width: 100%;
-  padding: 9px;
-  border: 1px  solid var(--light);
+  padding: 9px 0;
   background:
     url('./images/icons/three-dots.png')
     97% 50%
@@ -105,9 +109,22 @@ main {
   background-size: 18px;
 }
 
-.check {
-  margin-right: 9px;
-  border-radius: 0;
+.task-label:focus {
+  background: rgb(255, 203, 185);
+  border: none;
+}
+
+.trash {
+  display: none;
+  width: 18px;
+  height: 21px;
+  background-image: url('./images/icons/trash-icon.png');
+  background-size: 17px;
+  margin-inline: auto 3%;
+}
+
+.task-label:focus .trash {
+  display: inline-block;
 }
 
 #clear {
