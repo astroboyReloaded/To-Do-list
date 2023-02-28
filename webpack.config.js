@@ -9,8 +9,10 @@ module.exports = {
   devServer: {
     static: './dist',
   },
+  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Output Management',
       template: './src/index.html',
     }),
   ],
@@ -20,7 +22,7 @@ module.exports = {
     clean: true,
   },
   optimization: {
-    runtimeChunk: 'single',
+    minimize: false,
   },
   module: {
     rules: [

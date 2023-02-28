@@ -3,7 +3,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./images/Astroboy-removebg.png" alt="logo" width="120"  height="auto" />
+  <img src="./src/images/Astroboy-removebg.png" alt="logo" width="120"  height="auto" />
   <br/>
   <h3><b>To Do List | AstroboyReloaded</b></h3>
 </div>

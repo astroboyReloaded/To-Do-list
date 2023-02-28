@@ -1,17 +1,12 @@
 import './style.css';
-import { tasks, renderTasks } from './render';
-import {addTask, pushTask } from './addNRemove';
+import { List } from './toDoList';
+// import { Edit } from './addNRemove';
+
+window.onload = () => {;
+  List.render();
+}
 
 
-
-addTask.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    pushTask();
-    renderTasks();
-  }
-});
-
-
-
-window.onload = renderTasks();
-
+List.TaskInput.onkeydown = (e) => {
+  e.key === 'Enter' && List.addNewItem();
+}

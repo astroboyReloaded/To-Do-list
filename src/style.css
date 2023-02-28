@@ -44,12 +44,19 @@ main {
 
 .list-title {
   margin-block: 3px;
-  width: 100%;
+  width: fit-content;
   padding: 9px;
   font-size: 1rem;
+}
+
+.restart-icon {
+  display: block;
+  margin: 12px 12px 12px auto;
+  width: 18px;
+  height: 18px;
+  border: none;
   background:
     url('./images/icons/re-start.png')
-    97% 50%
     no-repeat;
   background-size: 18px;
 }
@@ -66,11 +73,6 @@ main {
   border: none;
   width: calc(100% - 6px);
   padding: 9px;
-  background:
-    url('./images/icons/enter.png')
-    97% 50%
-    no-repeat;
-  background-size: 12px;
 }
 
 #task-input::placeholder {
@@ -79,6 +81,18 @@ main {
 
 #task-input:focus {
   outline: none;
+}
+
+.enter-btn {
+  display: block;
+  margin: 12px 12px 12px auto;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background:
+    url('./images/icons/enter.png')
+    no-repeat;
+  background-size: 15px;
 }
 
 .taskList {
@@ -93,38 +107,93 @@ main {
   border-bottom: 1px solid var(--gray);
 }
 
-#check {
-  margin-inline: 12px;
-  border-radius: 0;
+.checkbox {
+  display: none;
 }
 
-.task-label {
+.check-btn {
+  display: block;
+  margin-inline: 10px;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border: 2px solid var(--gray);
+}
+
+.check-btn::before {
+  content: '';
+  display: none;
+  width: 6px;
+  height: 3px;
+  background-color: white;
+  transform: rotate(42deg);
+  position: relative;
+  top: 6px;
+}
+
+.check-btn::after {
+  content: '';
+  display: none;
+  width: 12px;
+  height: 3px;
+  background-color: white;
+  transform: rotate(-54deg);
+  position: relative;
+  top: 2px;
+  left: 3px;
+}
+
+.checkbox:checked ~.check-btn {
+  background-color: blue;
+  border-color: blue;
+}
+
+.checkbox:checked ~ .check-btn::before,
+.checkbox:checked ~ .check-btn::after {
+  display: block;
+}
+
+.scratch {
+  text-decoration: line-through;
+}
+
+.task-description {
   display: flex;
   width: 100%;
   padding: 9px 0;
-  background:
-    url('./images/icons/three-dots.png')
-    97% 50%
-    no-repeat;
+}
+
+.hide {
+  display: none;
+}
+
+.options-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: none;
+  margin-inline: auto 12px;
+  background: url('./images/icons/three-dots.png') no-repeat;
   background-size: 18px;
 }
 
-.task-label:focus {
-  background: rgb(255, 203, 185);
-  border: none;
+.edit-input {
+  border: 2px white;
+  padding: 11px 0;
 }
 
-.trash {
-  display: none;
+.edit-input:focus {
+  outline: none;
+}
+
+.delete-btn {
+  display: block;
   width: 18px;
-  height: 21px;
-  background-image: url('./images/icons/trash-icon.png');
-  background-size: 17px;
-  margin-inline: auto 3%;
-}
-
-.task-label:focus .trash {
-  display: inline-block;
+  height: 18px;
+  border: none;
+  margin-inline: auto 12px;
+  background: url('./images/icons/trash-icon.png') no-repeat;
+  background-size: 15px;
 }
 
 #clear {
