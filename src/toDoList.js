@@ -1,51 +1,63 @@
-// import { Edit } from "./addNRemove";
+import { Edit } from "./editor";
 
 class ToDoList {
   constructor(db) {
     this.TaskList = JSON.parse(db) || [];
     this.ListContainer = document.getElementById('taskList');
     this.TaskInput = document.getElementById('task-input');
+    this.clearCompletedBtn = document.getElementById('clear');
   }
 
   addNewItem() {
     this.TaskList.push({
       description: this.TaskInput.value,
       completed: false,
-      index: this.TaskList.length,
+      index: this.TaskList.length + 1,
     })
     this.saveToLS();
+    this.render();
+    Edit.setControlls();
+    this.TaskInput.value= '';
+    this.TaskInput.focus();
+  }
+  
+  clearAllCompleted() {
+    this.TaskList = this.TaskList.filter((task) => !task.completed);
+    Edit.setIndex();
+    this.saveToLS();
+    this.render();
+    Edit.setControlls();
   }
 
   saveToLS() {
     localStorage.setItem('list', JSON.stringify(this.TaskList));
-    this.render();
   }
 
   render() {
     this.ListContainer.innerHTML = this.TaskList.map((task) => (`
-  <li id="taskIndex${task.index}" index=${task.index} class="task-item">
+  <li id="taskIndex${task.index}" class="${task.index} task-item">
     <label
       id="checkIndex${task.index}"
-      index=${task.index}
-      class="checkContainer">
-      <input class="checkbox" type="checkbox">
-      <span class="check-btn"></span>
+      class="${task.index} checkContainer">
+      <input
+        class="${task.index} checkbox"
+        type="checkbox" ${task.completed && 'checked'}>
+      <span class="${task.index} check-btn"></span>
     </label>
-    <p class="task-description ${task.completed && 'scratch'}">${task.description}
-    </p>
     <input
-      id="editIndex${task.index}"
-      index=${task.index}
-      class="edit-input hide"
-      type="text">
+      id="descriptionIndex${task.index}"
+      class="task-description ${task.completed ? 'scratch' : ''}"
+      value="${task.description}"
+      readonly>
     <button
-      id="deleteBtnIndex${task.index}"
-      index=${task.index}
-      class="edit-icon delete-btn"></button>
+      class="${task.index} options-icon"
+      type"button"></button>
+    <button
+      class="${task.index} delete-Task-Btn hide"
+      type"button"></button>
   </li>
   `)).join('');
   }
 }
-
 
 export const List = new ToDoList(localStorage.getItem('list'));
