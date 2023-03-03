@@ -64,6 +64,8 @@
 - Save to **localStorage**.
 - **Add and Remove** a task.
 - **Edit** a task.
+- **Check completed**.
+- **Delete all completed**.
 
 ### Prerequisites
 
@@ -126,7 +128,7 @@ To auto-bundle every time you save changes.
 
 ## ⭐️ Future Features <a name="future-features"></a>
 
-- **Remove Completed Tasks**
+- **Drag and Drop**
 
 <!-- CONTRIBUTING -->
 

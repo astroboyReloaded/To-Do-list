@@ -1,10 +1,12 @@
 import './style.css';
 import List from './modules/toDoList.js';
 import Edit from './modules/editTask.js';
+import Completed from './modules/rmCompleted.js';
 
 const Render = () => {
   List.render();
   Edit.setControlls();
+  Completed.setControlls();
 };
 
 window.onload = () => {
@@ -20,6 +22,11 @@ List.TaskInput.onkeydown = (e) => {
 
 List.AddTaskBtn.onclick = () => {
   List.addNewItem();
+  Render();
+};
+
+List.DeleteCompletedBtn.onclick = () => {
+  List.deleteCompleted();
   Render();
 };
 
