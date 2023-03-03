@@ -60,6 +60,9 @@
 - **HTML** template.
 - Bsic **CSS**.
 - Render with **JavaScript**.
+- Save to **localStorage**.
+- **Add and Remove** a task.
+- **Edit** a task.
 
 ### Prerequisites
 
@@ -122,9 +125,7 @@ To auto-bundle every time you save changes.
 
 ## ⭐️ Future Features <a name="future-features"></a>
 
-- Save to `localStorage`.
-- **CRUD**
-- Dragg and drop.
+- **Remove Completed Tasks**
 
 <!-- CONTRIBUTING -->
 
