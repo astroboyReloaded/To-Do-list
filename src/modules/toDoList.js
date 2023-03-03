@@ -5,7 +5,7 @@ class ToDoList {
     this.Container = document.getElementById('taskList');
     this.TaskInput = document.getElementById('task-input');
     this.AddTaskBtn = document.getElementById('enter-btn');
-    this.ClearCompleted = document.getElementById('clear');
+    this.DeleteCompletedBtn = document.getElementById('clear');
   }
 
   addNewItem() {
@@ -16,6 +16,10 @@ class ToDoList {
     });
     this.TaskInput.value = '';
     this.TaskInput.focus();
+  }
+
+  deleteCompleted() {
+    this.TaskList = this.TaskList.filter((task) => !task.completed);
   }
 
   restart() {
