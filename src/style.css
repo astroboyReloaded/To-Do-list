@@ -31,7 +31,8 @@ main {
 }
 
 #listContainer {
-  width: 45vw;
+  width: 90vw;
+  max-width: 425px;
   background-color: white;
   box-shadow: 3px 6px 6px var(--gray);
 }
@@ -49,7 +50,7 @@ main {
   font-size: 1rem;
 }
 
-.restart-icon {
+#restart-icon {
   display: block;
   margin: 12px 12px 12px auto;
   width: 18px;
@@ -59,6 +60,7 @@ main {
     url('./images/icons/re-start.png')
     no-repeat;
   background-size: 18px;
+  cursor: pointer;
 }
 
 .input-label {
@@ -83,7 +85,7 @@ main {
   outline: none;
 }
 
-.enter-btn {
+#enter-btn {
   display: block;
   margin: 12px 12px 12px auto;
   width: 18px;
@@ -93,6 +95,7 @@ main {
     url('./images/icons/enter.png')
     no-repeat;
   background-size: 15px;
+  cursor: pointer;
 }
 
 .taskList {
@@ -153,12 +156,18 @@ main {
   display: block;
 }
 
+.edit-task {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .scratch {
   text-decoration: line-through;
 }
 
 .task-description {
-  display: flex;
   width: 100%;
   border: none;
   padding: 9px 0;
@@ -180,11 +189,6 @@ main {
 }
 
 .delete-Task-Btn {
-  display: block;
-  width: 18px;
-  height: 18px;
-  border: none;
-  margin-inline: auto 12px;
   background: url('./images/icons/trash-icon.png') no-repeat;
   background-size: 15px;
   cursor: pointer;
@@ -200,4 +204,5 @@ main {
   border-radius: 0;
   padding: 15px;
   color: gray;
+  cursor: pointer;
 }

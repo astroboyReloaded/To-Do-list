@@ -1,16 +1,29 @@
 import './style.css';
-import { List } from './toDoList';
-import { Edit } from './editor';
+import List from './modules/toDoList.js';
+import Edit from './modules/editTask.js';
 
-window.onload = () => {;
+const Render = () => {
   List.render();
   Edit.setControlls();
-}
+};
+
+window.onload = () => {
+  Render();
+};
 
 List.TaskInput.onkeydown = (e) => {
-  e.key === 'Enter' && List.addNewItem();
-}
+  if (e.key === 'Enter') {
+    List.addNewItem();
+    Render();
+  }
+};
 
-List.clearCompletedBtn.onclick = () => {
-  List.clearAllCompleted();
-}
+List.AddTaskBtn.onclick = () => {
+  List.addNewItem();
+  Render();
+};
+
+List.Restart.onclick = () => {
+  List.restart();
+  Render();
+};
