@@ -1,29 +1,29 @@
 import './style.css';
+import List from './modules/toDoList.js';
+import Edit from './modules/editTask.js';
 
-const tasks = [
-  {
-    description: 'Create an index.js file',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Create a style.css file',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Bundle into dist/ folder',
-    completed: false,
-    index: 3,
-  },
-];
+const Render = () => {
+  List.render();
+  Edit.setControlls();
+};
 
-const list = document.querySelector('#taskList');
+window.onload = () => {
+  Render();
+};
 
-const iterateTasks = () => tasks.map((task) => (`
-<li class="list-item">
-  <label class="task-label"><input class="check" type="checkbox">${task.description}</label>
-</li>
-`)).join('');
+List.TaskInput.onkeydown = (e) => {
+  if (e.key === 'Enter') {
+    List.addNewItem();
+    Render();
+  }
+};
 
-list.innerHTML = iterateTasks();
+List.AddTaskBtn.onclick = () => {
+  List.addNewItem();
+  Render();
+};
+
+List.Restart.onclick = () => {
+  List.restart();
+  Render();
+};

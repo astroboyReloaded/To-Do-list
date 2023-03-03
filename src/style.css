@@ -31,9 +31,10 @@ main {
 }
 
 #listContainer {
-  width: 45vw;
+  width: 90vw;
+  max-width: 425px;
   background-color: white;
-  box-shadow: 3px 6px 6px var(--gray), -2px 3px 4px var(--gray);
+  box-shadow: 3px 6px 6px var(--gray);
 }
 
 .list-header {
@@ -44,15 +45,22 @@ main {
 
 .list-title {
   margin-block: 3px;
-  width: 100%;
+  width: fit-content;
   padding: 9px;
   font-size: 1rem;
+}
+
+#restart-icon {
+  display: block;
+  margin: 12px 12px 12px auto;
+  width: 18px;
+  height: 18px;
+  border: none;
   background:
     url('./images/icons/re-start.png')
-    97% 50%
     no-repeat;
   background-size: 18px;
-  border: 1px solid var(--light);
+  cursor: pointer;
 }
 
 .input-label {
@@ -63,23 +71,31 @@ main {
   border-bottom: 1px solid var(--gray);
 }
 
-.task-input {
+#task-input {
   border: none;
   width: calc(100% - 6px);
   padding: 9px;
-  background:
-    url('./images/icons/enter.png')
-    97% 50%
-    no-repeat;
-  background-size: 12px;
 }
 
-.task-input::placeholder {
+#task-input::placeholder {
   font-style: italic;
 }
 
-.task-input:focus {
+#task-input:focus {
   outline: none;
+}
+
+#enter-btn {
+  display: block;
+  margin: 12px 12px 12px auto;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background:
+    url('./images/icons/enter.png')
+    no-repeat;
+  background-size: 15px;
+  cursor: pointer;
 }
 
 .taskList {
@@ -87,27 +103,99 @@ main {
   flex-direction: column;
 }
 
-.list-item {
+.task-item {
   padding-block: 3px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--gray);
 }
 
-.task-label {
-  width: 100%;
-  padding: 9px;
-  border: 1px  solid var(--light);
-  background:
-    url('./images/icons/three-dots.png')
-    97% 50%
-    no-repeat;
-  background-size: 18px;
+.checkbox {
+  display: none;
 }
 
-.check {
-  margin-right: 9px;
-  border-radius: 0;
+.check-btn {
+  display: block;
+  margin-inline: 10px;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border: 2px solid var(--gray);
+}
+
+.check-btn::before {
+  content: '';
+  display: none;
+  width: 6px;
+  height: 3px;
+  background-color: white;
+  transform: rotate(42deg);
+  position: relative;
+  top: 6px;
+}
+
+.check-btn::after {
+  content: '';
+  display: none;
+  width: 12px;
+  height: 3px;
+  background-color: white;
+  transform: rotate(-54deg);
+  position: relative;
+  top: 2px;
+  left: 3px;
+}
+
+.checkbox:checked ~ .check-btn {
+  background-color: blue;
+  border-color: blue;
+}
+
+.checkbox:checked ~ .check-btn::before,
+.checkbox:checked ~ .check-btn::after {
+  display: block;
+}
+
+.edit-task {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.scratch {
+  text-decoration: line-through;
+}
+
+.task-description {
+  width: 100%;
+  border: none;
+  padding: 9px 0;
+}
+
+.task-description:focus {
+  outline: none;
+}
+
+.options-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: none;
+  margin-inline: auto 12px;
+  background: url('./images/icons/three-dots.png') no-repeat;
+  background-size: 18px;
+  cursor: pointer;
+}
+
+.delete-Task-Btn {
+  background: url('./images/icons/trash-icon.png') no-repeat;
+  background-size: 15px;
+  cursor: pointer;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 #clear {
@@ -116,4 +204,5 @@ main {
   border-radius: 0;
   padding: 15px;
   color: gray;
+  cursor: pointer;
 }

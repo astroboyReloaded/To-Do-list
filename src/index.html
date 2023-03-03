@@ -11,15 +11,21 @@
         <article id="listContainer">
             <header class="list-header">
                 <h1 class="list-title">Today's To Do</h1>
+                <i id="restart-icon"></i>
             </header>
             <label class="input-label">
                 <input
-                    class="task-input"
+                    id="task-input"
                     type="text"
                     placeholder="Add to your list...">
+                <i id="enter-btn"></i>
             </label>
             <ul id="taskList"></ul>
-            <button id="clear">Clear all completed</button>
+            <button
+                id="clear"
+                type="button">
+                Clear all completed
+            </button>
         </article>
     </main>
 </body>
