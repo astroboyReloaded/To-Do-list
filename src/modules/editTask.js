@@ -27,9 +27,9 @@ class EditTask {
       List.render();
       this.setControlls();
     };
-    input.removeAttribute('readonly');
-
     const input = this.Description[i];
+
+    input.removeAttribute('readonly');
 
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {

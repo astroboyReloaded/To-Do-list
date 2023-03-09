@@ -6,24 +6,28 @@ let TaskList = [
 
 const editTask = (i, value) => {
   TaskList[i].description = value;
+  return TaskList;
 };
 
 const checkCompleted = (i) => {
   const checkInputs = [
     { checked: false },
     { checked: true },
-    { checked: false },
+    { checked: true },
   ];
   if (checkInputs[i].checked) {
     TaskList[i].completed = false;
   } else {
     TaskList[i].completed = true;
   }
+  return TaskList;
 };
-checkCompleted(0);
 
 const deleteCompleted = () => {
   TaskList = TaskList.filter((task) => !task.completed);
-}
+  return TaskList;
+};
 
-export { editTask, TaskList, checkCompleted, deleteCompleted };
+export {
+  editTask, checkCompleted, deleteCompleted,
+};

@@ -2,19 +2,29 @@
  * @jest-environment jsdom
  */
 
-import { editTask, TaskList, checkCompleted, deleteCompleted } from './Mock.js';
+import {
+  editTask, checkCompleted, deleteCompleted,
+} from './Mock.js';
 
 describe('Interactivity', () => {
   test('Edit Task', () => {
-    editTask(0, 'Task1');
-    expect(TaskList[0].description).toContain('Task1');
+    expect(editTask(0, 'Task1')).toStrictEqual([
+      { description: 'Task1', completed: false, index: 1 },
+      { description: 'Task2', completed: false, index: 2 },
+      { description: 'Task3', completed: false, index: 3 },
+    ]);
   });
   test('Check as Completed', () => {
-    checkCompleted(1);
-    expect(TaskList[1].completed).toBeFalsy();
+    expect(checkCompleted(0)).toStrictEqual([
+      { description: 'Task1', completed: true, index: 1 },
+      { description: 'Task2', completed: false, index: 2 },
+      { description: 'Task3', completed: false, index: 3 },
+    ]);
   });
   test('Clear all Completed', () => {
-    deleteCompleted();
-    expect(TaskList).toHaveLength(2);
-  })
+    expect(deleteCompleted()).toStrictEqual([
+      { description: 'Task2', completed: false, index: 2 },
+      { description: 'Task3', completed: false, index: 3 },
+    ]);
+  });
 });
