@@ -1,32 +1,32 @@
-TN:
-SF:Mock.js
-FN:7,(anonymous_0)
-FN:12,(anonymous_1)
-FN:27,(anonymous_2)
-FN:28,(anonymous_3)
-FNF:4
-FNH:4
-FNDA:1,(anonymous_0)
-FNDA:1,(anonymous_1)
-FNDA:1,(anonymous_2)
-FNDA:3,(anonymous_3)
-DA:1,1
-DA:7,1
-DA:8,1
-DA:9,1
-DA:12,1
-DA:13,1
-DA:18,1
-DA:19,0
-DA:21,1
-DA:23,1
-DA:27,1
-DA:28,3
-DA:29,1
-LF:13
-LH:12
-BRDA:18,0,0,0
-BRDA:18,0,1,1
-BRF:2
-BRH:1
-end_of_record
+tn:
+  sf:mock.js
+  fn:7,(anonymous_0)
+  fn:12,(anonymous_1)
+  fn:27,(anonymous_2)
+  fn:28,(anonymous_3)
+  fnf:4
+  fnh:4
+  fnda:1,(anonymous_0)
+  fnda:1,(anonymous_1)
+  fnda:1,(anonymous_2)
+  fnda:3,(anonymous_3)
+  da:1,1
+  da:7,1
+  da:8,1
+  da:9,1
+  da:12,1
+  da:13,1
+  da:18,1
+  da:19,0
+  da:21,1
+  da:23,1
+  da:27,1
+  da:28,3
+  da:29,1
+  lf:13
+  lh:12
+  brda:18,0,0,0
+  brda:18,0,1,1
+  brf:2
+  brh:1
+;
