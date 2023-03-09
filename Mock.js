@@ -20,5 +20,10 @@ const checkCompleted = (i) => {
     TaskList[i].completed = true;
   }
 };
+checkCompleted(0);
 
-export { editTask, TaskList, checkCompleted };
+const deleteCompleted = () => {
+  TaskList = TaskList.filter((task) => !task.completed);
+}
+
+export { editTask, TaskList, checkCompleted, deleteCompleted };

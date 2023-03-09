@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { editTask, TaskList, checkCompleted } from './Mock.js';
+import { editTask, TaskList, checkCompleted, deleteCompleted } from './Mock.js';
 
 describe('Interactivity', () => {
   test('Edit Task', () => {
@@ -13,4 +13,8 @@ describe('Interactivity', () => {
     checkCompleted(1);
     expect(TaskList[1].completed).toBeFalsy();
   });
+  test('Clear all Completed', () => {
+    deleteCompleted();
+    expect(TaskList).toHaveLength(2);
+  })
 });
