@@ -27,19 +27,17 @@ class EditTask {
       List.render();
       this.setControlls();
     };
-
     const input = this.Description[i];
 
     input.removeAttribute('readonly');
+
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         this.saveEdition(i, input);
       }
     });
-    this.Options[i].addEventListener('blur', (e) => {
-      if (!e.target.classList.contains('options-icon')) {
-        this.saveEdition(i, input);
-      }
+    input.addEventListener('blur', () => {
+      this.saveEdition(i, input);
     });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -47,6 +45,11 @@ class EditTask {
         this.disableEdition(input);
       }
     });
+  }
+
+  removeBtn() {
+    this.delteTaskBtn.classList.remove('delete-Task-Btn');
+    this.delteTaskBtn = null;
   }
 
   saveEdition(i, input) {
