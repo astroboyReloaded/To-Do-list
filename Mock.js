@@ -28,6 +28,4 @@ const deleteCompleted = () => {
   return TaskList;
 };
 
-export {
-  editTask, checkCompleted, deleteCompleted,
-};
+export { editTask, checkCompleted, deleteCompleted };

@@ -39,7 +39,8 @@ class ToDoList {
 
   render() {
     this.saveToLS();
-    this.Container.innerHTML = this.TaskList.map((task) => (`
+    this.Container.innerHTML = this.TaskList.map(
+      (task) => `
   <li class="task-item">
     <label class="checkContainer">
       <input 
@@ -53,12 +54,16 @@ class ToDoList {
       class="task-description ${task.completed ? 'scratch' : ''}"
       value="${task.description}">
     <button
-      id="delete-Task-Btn${task.index}"
-      class="options-icon"
+      class="task-btn drag-btn"
+      type"button">
+    </button>
+    <button
+      class="task-btn delete-Task-Btn hide"
       type"button">
     </button>
   </li>
-  `)).join('');
+  `,
+    ).join('');
   }
 }
 const List = new ToDoList(localStorage.getItem('list'));

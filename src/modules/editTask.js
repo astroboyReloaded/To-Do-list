@@ -1,15 +1,11 @@
 import List from './toDoList.js';
+import RmCompleted from './rmCompleted.js';
 
 class EditTask {
   constructor() {
     this.setControlls = () => {
-      this.Options = document.querySelectorAll('.options-icon');
-      this.Options.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-          this.enableEdition(index);
-          this.Description[index].focus();
-        });
-      });
+      this.drag = document.querySelectorAll('.drag-btn');
+      this.delteTaskBtn = document.querySelectorAll('.delete-Task-Btn');
       this.Description = document.querySelectorAll('.task-description');
       this.Description.forEach((input, index) => {
         input.addEventListener('focusin', () => {
@@ -20,13 +16,14 @@ class EditTask {
   }
 
   enableEdition(i) {
-    this.delteTaskBtn = document.getElementById(`delete-Task-Btn${i + 1}`);
-    this.delteTaskBtn.classList.add('delete-Task-Btn');
-    this.delteTaskBtn.onclick = () => {
-      List.TaskList = List.TaskList.filter((t, index) => index !== i);
+    this.drag[i].classList.add('hide');
+    this.delteTaskBtn[i].classList.remove('hide');
+    this.delteTaskBtn[i].addEventListener('click', () => {
+      List.TaskList.splice(i, 1);
       List.render();
       this.setControlls();
-    };
+      RmCompleted.setControlls();
+    });
     const input = this.Description[i];
 
     input.removeAttribute('readonly');
@@ -36,8 +33,10 @@ class EditTask {
         this.saveEdition(i, input);
       }
     });
-    input.addEventListener('blur', () => {
-      this.saveEdition(i, input);
+    input.addEventListener('blur', (e) => {
+      if (e.relatedTarget !== this.delteTaskBtn[i]) {
+        this.saveEdition(i, input);
+      }
     });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -61,6 +60,7 @@ class EditTask {
     input.setAttribute('readonly', true);
     List.render();
     this.setControlls();
+    RmCompleted.setControlls();
   }
 }
 const Edit = new EditTask();

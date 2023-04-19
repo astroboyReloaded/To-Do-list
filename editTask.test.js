@@ -2,9 +2,7 @@
  * @jest-environment jsdom
  */
 
-import {
-  editTask, checkCompleted, deleteCompleted,
-} from './Mock.js';
+import { editTask, checkCompleted, deleteCompleted } from './Mock.js';
 
 describe('Interactivity', () => {
   test('Edit Task', () => {
