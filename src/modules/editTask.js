@@ -1,5 +1,6 @@
 import List from './toDoList.js';
-import RmCompleted from './rmCompleted.js';
+/* eslint-disable import/no-cycle */
+import Completed from './rmCompleted.js';
 
 class EditTask {
   constructor() {
@@ -22,7 +23,7 @@ class EditTask {
       List.TaskList.splice(i, 1);
       List.render();
       this.setControlls();
-      RmCompleted.setControlls();
+      Completed.setControlls();
     });
     const input = this.Description[i];
 
@@ -54,13 +55,14 @@ class EditTask {
   saveEdition(i, input) {
     List.TaskList[i].description = input.value;
     this.disableEdition(input);
+    Completed.setControlls();
   }
 
   disableEdition(input) {
     input.setAttribute('readonly', true);
     List.render();
     this.setControlls();
-    RmCompleted.setControlls();
+    Completed.setControlls();
   }
 }
 const Edit = new EditTask();

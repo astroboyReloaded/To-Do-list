@@ -1,4 +1,5 @@
 import List from './toDoList.js';
+/* eslint-disable import/no-cycle */
 import Edit from './editTask.js';
 
 class RmCompleted {
@@ -21,8 +22,8 @@ class RmCompleted {
       List.TaskList[i].completed = true;
     }
     List.render();
-    Edit.setControlls();
     this.setControlls();
+    Edit.setControlls();
   }
 }
 const Completed = new RmCompleted();
