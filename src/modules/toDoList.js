@@ -54,8 +54,12 @@ class ToDoList {
       class="task-description ${task.completed ? 'scratch' : ''}"
       value="${task.description}">
     <button
+      id='drag-btn${task.index}'
+      class='drag-btn'
+      type='button'>
+    <button
       id="delete-Task-Btn${task.index}"
-      class="options-icon"
+      class="delete-Task-Btn hide"
       type"button">
     </button>
   </li>
