@@ -39,7 +39,8 @@ class ToDoList {
 
   render() {
     this.saveToLS();
-    this.Container.innerHTML = this.TaskList.map((task) => (`
+    this.Container.innerHTML = this.TaskList.map(
+      (task) => `
   <li class="task-item">
     <label class="checkContainer">
       <input 
@@ -58,7 +59,8 @@ class ToDoList {
       type"button">
     </button>
   </li>
-  `)).join('');
+  `,
+    ).join('');
   }
 }
 const List = new ToDoList(localStorage.getItem('list'));
