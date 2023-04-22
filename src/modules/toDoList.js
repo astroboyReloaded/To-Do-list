@@ -55,11 +55,11 @@ class ToDoList {
       value="${task.description}">
     <button
       id='drag-btn${task.index}'
-      class='drag-btn'
+      class='drag-btn btn'
       type='button'>
     <button
       id="delete-Task-Btn${task.index}"
-      class="delete-Task-Btn hide"
+      class="delete-Task-Btn btn hide"
       type"button">
     </button>
   </li>
