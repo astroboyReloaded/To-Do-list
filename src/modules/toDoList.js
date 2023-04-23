@@ -18,18 +18,23 @@ class ToDoList {
     this.TaskInput.focus();
   }
 
+  setIndex() {
+    this.TaskList.forEach((task, i) => {
+      task.index = i + 1;
+    });
+  }
+
+  deleteTask(i) {
+    this.TaskList = this.TaskList.filter((t, index) => index !== i);
+    this.render();
+  }
+
   deleteCompleted() {
     this.TaskList = this.TaskList.filter((task) => !task.completed);
   }
 
   restart() {
     this.TaskList = [];
-  }
-
-  setIndex() {
-    this.TaskList.forEach((task, i) => {
-      task.index = i + 1;
-    });
   }
 
   saveToLS() {
@@ -39,7 +44,8 @@ class ToDoList {
 
   render() {
     this.saveToLS();
-    this.Container.innerHTML = this.TaskList.map((task) => (`
+    this.Container.innerHTML = this.TaskList.map(
+      (task) => `
   <li class="task-item">
     <label class="checkContainer">
       <input 
@@ -53,12 +59,17 @@ class ToDoList {
       class="task-description ${task.completed ? 'scratch' : ''}"
       value="${task.description}">
     <button
+      id='drag-btn${task.index}'
+      class='drag-btn btn'
+      type='button'>
+    <button
       id="delete-Task-Btn${task.index}"
-      class="options-icon"
+      class="delete-Task-Btn btn hide"
       type"button">
     </button>
   </li>
-  `)).join('');
+  `,
+    ).join('');
   }
 }
 const List = new ToDoList(localStorage.getItem('list'));
