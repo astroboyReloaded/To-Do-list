@@ -1,6 +1,6 @@
 import './style.css';
 import List from './modules/toDoList.js';
-import Tasks from './modules/handleTasks';
+import Tasks from './modules/handleTasks.js';
 
 const Render = () => {
   List.render();
