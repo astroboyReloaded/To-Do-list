@@ -1,16 +1,11 @@
 import List from './toDoList.js';
 
 class EditTask {
-  getDeleteTaskBtn = (i) => {
-    this.dgragBtn = document.getElementById(`drag-btn${i + 1}`);
-    this.delteTaskBtn = document.getElementById(`delete-Task-Btn${i + 1}`);
-    this.dgragBtn.classList.add('hide');
-    this.delteTaskBtn.classList.remove('hide');
-  };
-
-  deleteTask(i) {
-    List.TaskList = List.TaskList.filter((t, index) => index !== i);
-    List.render();
+  constructor(i) {
+    this.deleteTaskBtn = document.getElementById(`delete-Task-Btn${i}`);
+    this.dragBtn = document.getElementById(`drag-btn${i}`);
+    this.dragBtn.classList.add('hide');
+    this.deleteTaskBtn.classList.remove('hide');
   }
 
   saveEdition(i, input) {
@@ -20,10 +15,10 @@ class EditTask {
 
   disableEdition(input) {
     input.setAttribute('readonly', true);
-    this.delteTaskBtn.classList.add('hide');
-    this.dgragBtn.classList.remove('hide');
+    this.deleteTaskBtn.classList.add('hide');
+    this.dragBtn.classList.remove('hide');
     List.render();
   }
 }
 
-export default new EditTask();
+export default EditTask;

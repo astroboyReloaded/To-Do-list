@@ -21,31 +21,32 @@ class HandleTasks {
   }
 
   enableEdition(i) {
+    const editTask = new EditTask(i + 1);
     const input = this.Description[i];
     input.removeAttribute('readonly');
-    EditTask.getDeleteTaskBtn(i);
-    EditTask.delteTaskBtn.onclick = () => {
-      EditTask.deleteTask(i);
-      this.setControlls();
-    };
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        EditTask.saveEdition(i, input);
+        editTask.saveEdition(i, input);
         this.setControlls();
       }
     });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         input.value = List.TaskList[i].description;
-        EditTask.disableEdition(input);
+        editTask.disableEdition(input);
         this.setControlls();
       }
     });
     this.Description[i].addEventListener('blur', (e) => {
-      if (!e.target.classList.contains('delete-Task-Btn')) {
-        EditTask.saveEdition(i, input);
+      if (!e.relatedTarget.classList.contains('delete-Task-Btn')) {
+        editTask.saveEdition(i, input);
         this.setControlls();
       }
+    });
+
+    editTask.deleteTaskBtn.addEventListener('click', () => {
+      List.deleteTask(i);
+      this.setControlls();
     });
   }
 

@@ -18,18 +18,23 @@ class ToDoList {
     this.TaskInput.focus();
   }
 
+  setIndex() {
+    this.TaskList.forEach((task, i) => {
+      task.index = i + 1;
+    });
+  }
+
+  deleteTask(i) {
+    this.TaskList = this.TaskList.filter((t, index) => index !== i);
+    this.render();
+  }
+
   deleteCompleted() {
     this.TaskList = this.TaskList.filter((task) => !task.completed);
   }
 
   restart() {
     this.TaskList = [];
-  }
-
-  setIndex() {
-    this.TaskList.forEach((task, i) => {
-      task.index = i + 1;
-    });
   }
 
   saveToLS() {
